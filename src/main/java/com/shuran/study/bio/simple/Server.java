@@ -1,4 +1,4 @@
-package com.shuran.study.bio;
+package com.shuran.study.bio.simple;
 
 import java.io.*;
 import java.net.InetSocketAddress;

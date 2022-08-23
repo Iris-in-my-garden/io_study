@@ -10,6 +10,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 把收到的消息转发给所有客户端
+ */
 public class Server {
     public static List<Socket> socketList=new ArrayList<>();
 
@@ -43,10 +46,9 @@ public class Server {
                     //send to every connected client
                     System.out.println("received content: "+content);
                     for(Socket s : Server.socketList){
-                        if(s!=socket){
-                            PrintStream ps=new PrintStream(s.getOutputStream());
-                            ps.println(content);
-                        }
+                        PrintStream ps=new PrintStream(s.getOutputStream());
+                        ps.println(content);
+
                     }
                 }
             } catch (IOException e) {

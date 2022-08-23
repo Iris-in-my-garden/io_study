@@ -8,6 +8,9 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 
+/**
+ * 一个线程读消息，另一个线程写消息
+ */
 public class Client {
     public static void main(String[] args) throws IOException {
         Socket s=new Socket("127.0.0.1",8888);
